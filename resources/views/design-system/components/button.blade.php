@@ -13,7 +13,7 @@
 @php
     $isDisabled = $disabled || $loading;
 
-    $base = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20';
+    $base = 'inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20';
 
     $sizeClass = match ($size) {
         'sm' => 'px-3 py-1.5 text-xs h-8 rounded-md',
