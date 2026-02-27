@@ -26,6 +26,11 @@ return [
         'profile_name' => 'Shahidul Islam',
         'profile_role' => 'Admin',
         'language' => 'Language',
+        'locales' => [
+            'pt_BR' => 'Português',
+            'en' => 'English',
+            'es' => 'Español',
+        ],
         'view_all' => 'View all',
         'my_profile' => 'My Profile',
         'inbox' => 'Inbox',

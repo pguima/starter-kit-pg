@@ -5,10 +5,10 @@
         <!-- Header -->
         <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
-                <h1 class="text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+                <h1 class="text-xl font-semibold tracking-tight text-(--text-primary)">
                     {{ __('ds.pages.links.title') }}
                 </h1>
-                <div class="mt-1 text-sm text-[var(--text-secondary)]">
+                <div class="mt-1 text-sm text-(--text-secondary)">
                     {{ __('ds.pages.links.subtitle') }}
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <!-- Inline Example -->
             <x-ds::card :title="__('ds.pages.links.sections.inline')"
                 :description="__('ds.pages.links.sections.inline_desc')">
-                <div class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">
+                <div class="mt-4 text-sm text-(--text-secondary) leading-relaxed">
                     <p>
                         Links are essential for navigation. You can place them
                         <x-ds::link href="#" underline="always">inline within text</x-ds::link>
@@ -71,7 +71,7 @@
 
             <!-- Documentation -->
             <div class="lg:col-span-2">
-                <div class="mb-6 text-sm font-semibold text-[var(--text-secondary)]">
+                <div class="mb-6 text-sm font-semibold text-(--text-secondary)">
                     {{ __('ds.pages.links.docs.title') }}
                 </div>
 
@@ -79,10 +79,10 @@
                     :description="__('ds.pages.links.docs.usage_subtitle')">
                     <div class="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div>
-                            <div class="text-sm font-semibold text-[var(--text-primary)]">
+                            <div class="text-sm font-semibold text-(--text-primary)">
                                 {{ __('ds.pages.links.docs.example_code_title') }}</div>
                             <div
-                                class="mt-3 overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-hover)]">
+                                class="mt-3 overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-hover)">
                                 <pre class="overflow-x-auto p-4 text-xs leading-relaxed"><code>@verbatim
                                     <!-- Basic -->
                                     <x-ds::link href="/dashboard">Go to Dashboard</x-ds::link>
@@ -101,17 +101,17 @@
                         </div>
 
                         <div>
-                            <div class="text-sm font-semibold text-[var(--text-primary)]">
+                            <div class="text-sm font-semibold text-(--text-primary)">
                                 {{ __('ds.pages.links.docs.props_title') }}</div>
-                            <div class="mt-3 grid grid-cols-1 gap-4 text-sm text-[var(--text-secondary)]">
-                                <div><span class="font-semibold text-[var(--text-primary)]">variant</span> — primary,
+                            <div class="mt-3 grid grid-cols-1 gap-4 text-sm text-(--text-secondary)">
+                                <div><span class="font-semibold text-(--text-primary)">variant</span> — primary,
                                     secondary, muted, danger.</div>
-                                <div><span class="font-semibold text-[var(--text-primary)]">size</span> — sm, md, lg.</div>
-                                <div><span class="font-semibold text-[var(--text-primary)]">external</span> — Adds
+                                <div><span class="font-semibold text-(--text-primary)">size</span> — sm, md, lg.</div>
+                                <div><span class="font-semibold text-(--text-primary)">external</span> — Adds
                                     target="_blank" and arrow icon.</div>
-                                <div><span class="font-semibold text-[var(--text-primary)]">underline</span> — hover
+                                <div><span class="font-semibold text-(--text-primary)">underline</span> — hover
                                     (default), always, none.</div>
-                                <div><span class="font-semibold text-[var(--text-primary)]">icon</span> — Iconify icon name.
+                                <div><span class="font-semibold text-(--text-primary)">icon</span> — Iconify icon name.
                                 </div>
                             </div>
                         </div>

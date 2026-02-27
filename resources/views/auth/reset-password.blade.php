@@ -6,8 +6,8 @@
     <x-ds::card>
         <div class="space-y-6">
             <div>
-                <h1 class="text-xl font-semibold text-[var(--text-primary)]">{{ __('app.auth.reset_password.heading') }}</h1>
-                <p class="mt-1 text-sm text-[var(--text-secondary)]">{{ __('app.auth.reset_password.subtitle') }}</p>
+                <h1 class="text-xl font-semibold text-(--text-primary)">{{ __('app.auth.reset_password.heading') }}</h1>
+                <p class="mt-1 text-sm text-(--text-secondary)">{{ __('app.auth.reset_password.subtitle') }}</p>
             </div>
 
             <form method="POST" action="{{ route('password.update') }}" class="space-y-4">

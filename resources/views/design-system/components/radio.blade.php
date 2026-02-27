@@ -12,10 +12,10 @@
 @php
     $id = $id ?? 'radio-' . uniqid();
     
-    $inputClass = 'peer h-4 w-4 shrink-0 cursor-pointer appearance-none rounded-full border border-[var(--border-default)] bg-[var(--surface-card)] transition-all checked:border-[var(--color-primary)] checked:bg-[var(--color-primary)] hover:border-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 disabled:cursor-not-allowed disabled:bg-[var(--surface-hover)] disabled:opacity-50';
+    $inputClass = 'peer h-4 w-4 shrink-0 cursor-pointer appearance-none rounded-full border border-(--border-default) bg-(--surface-card) transition-all checked:border-(--color-primary) checked:bg-(--color-primary) hover:border-(--color-primary) focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20 disabled:cursor-not-allowed disabled:bg-(--surface-hover) disabled:opacity-50';
     
      if ($error) {
-        $inputClass .= ' border-[var(--status-error)]';
+        $inputClass .= ' border-(--status-error)';
     }
 @endphp
 
@@ -37,13 +37,13 @@
     
     @if ($label)
         <div class="ml-2 text-sm">
-            <label for="{{ $id }}" class="font-medium text-[var(--text-primary)] {{ $disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer' }}">
+            <label for="{{ $id }}" class="font-medium text-(--text-primary) {{ $disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer' }}">
                 {{ $label }}
             </label>
              @if ($error)
-                <p class="mt-1 text-xs text-[var(--status-error)]">{{ $error }}</p>
+                <p class="mt-1 text-xs text-(--status-error)">{{ $error }}</p>
             @elseif ($helper)
-                <p class="mt-1 text-xs text-[var(--text-secondary)]">{{ $helper }}</p>
+                <p class="mt-1 text-xs text-(--text-secondary)">{{ $helper }}</p>
             @endif
         </div>
     @endif

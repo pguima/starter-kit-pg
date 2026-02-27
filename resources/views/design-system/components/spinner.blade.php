@@ -40,7 +40,7 @@
     <span {{ $attributes->merge(['class' => $classes, 'style' => $styleAttr]) }}></span>
 
     @if ($label)
-        <span class="text-sm text-[var(--text-secondary)]">{{ $label }}</span>
+        <span class="text-sm text-(--text-secondary)">{{ $label }}</span>
     @endif
 
     <span class="sr-only">{{ $label ?: 'Loading' }}</span>

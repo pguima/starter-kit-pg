@@ -15,26 +15,26 @@
     $id = $id ?? $name ?? 'textarea-' . uniqid();
     
     $containerClass = 'flex flex-col gap-1.5 w-full';
-    $labelClass = 'text-sm font-medium text-[var(--text-primary)]';
+    $labelClass = 'text-sm font-medium text-(--text-primary)';
     
-    $baseClass = 'w-full rounded-lg border bg-[var(--surface-card)] px-3 py-2 text-sm text-[var(--text-primary)] transition-all duration-200 placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 disabled:cursor-not-allowed disabled:bg-[var(--surface-hover)] disabled:text-[var(--text-muted)]';
+    $baseClass = 'w-full rounded-lg border bg-(--surface-card) px-3 py-2 text-sm text-(--text-primary) transition-all duration-200 placeholder:text-(--text-muted) focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20 disabled:cursor-not-allowed disabled:bg-(--surface-hover) disabled:text-(--text-muted)';
     
     $borderClass = $error 
-        ? 'border-[var(--status-error)] focus:border-[var(--status-error)] focus:ring-[var(--status-error)]/20' 
-        : 'border-[var(--border-default)] focus:border-[var(--color-primary)] hover:border-[var(--border-hover)]';
+        ? 'border-(--status-error) focus:border-(--status-error) focus:ring-(--status-error)/20' 
+        : 'border-(--border-default) focus:border-(--color-primary) hover:border-(--border-hover)';
 
     $textareaClasses = implode(' ', [$baseClass, $borderClass]);
     
     $messageClass = 'text-xs';
-    $errorClass = 'text-[var(--status-error)]';
-    $helperClass = 'text-[var(--text-secondary)]';
+    $errorClass = 'text-(--status-error)';
+    $helperClass = 'text-(--text-secondary)';
 @endphp
 
 <div class="{{ $containerClass }}">
     @if ($label)
         <label for="{{ $id }}" class="{{ $labelClass }}">
             {{ $label }}
-            @if ($required) <span class="text-[var(--status-error)]">*</span> @endif
+            @if ($required) <span class="text-(--status-error)">*</span> @endif
         </label>
     @endif
 

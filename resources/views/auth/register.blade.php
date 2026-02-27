@@ -6,8 +6,8 @@
     <x-ds::card>
         <div class="space-y-6">
             <div>
-                <h1 class="text-xl font-semibold text-[var(--text-primary)]">{{ __('app.auth.register.heading') }}</h1>
-                <p class="mt-1 text-sm text-[var(--text-secondary)]">{{ __('app.auth.register.subtitle') }}</p>
+                <h1 class="text-xl font-semibold text-(--text-primary)">{{ __('app.auth.register.heading') }}</h1>
+                <p class="mt-1 text-sm text-(--text-secondary)">{{ __('app.auth.register.subtitle') }}</p>
             </div>
 
             @if ($errors->any())
@@ -61,7 +61,7 @@
                 </div>
             </form>
 
-            <div class="text-sm text-[var(--text-secondary)]">
+            <div class="text-sm text-(--text-secondary)">
                 {{ __('app.auth.register.have_account') }}
                 <x-ds::link href="{{ route('login') }}">{{ __('app.auth.register.login_link') }}</x-ds::link>
             </div>

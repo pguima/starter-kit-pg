@@ -16,7 +16,7 @@
         default => ['c' => 'var(--status-info)', 'light' => 'var(--status-info-light)', 'fg' => 'white'],
     };
 
-    $base = 'relative w-full max-w-sm overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-card)] shadow-[var(--shadow-lg)]';
+    $base = 'relative w-full max-w-sm overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-card) shadow-(--shadow-lg)';
 
     $contentPadding = 'p-4';
 
@@ -100,7 +100,7 @@
             @if ($dismissible)
                 <button
                     type="button"
-                    class="inline-flex h-7 w-7 items-center justify-center rounded-md opacity-60 transition-opacity duration-150 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20"
+                    class="inline-flex h-7 w-7 items-center justify-center rounded-md opacity-60 transition-opacity duration-150 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20"
                     @click="open = false"
                     aria-label="Close"
                 >

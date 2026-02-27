@@ -13,7 +13,7 @@
 @php
     $isDisabled = $disabled || $loading;
 
-    $base = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20';
+    $base = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20';
 
     $sizeClass = match ($size) {
         'sm' => 'px-3 py-1.5 text-xs h-8 rounded-md',
@@ -23,15 +23,15 @@
     };
 
     $variantClass = match ($variant) {
-        'secondary' => 'bg-[var(--surface-card)] text-[var(--text-primary)] border border-[var(--border-default)] hover:bg-[var(--surface-hover)] hover:border-[var(--border-hover)] shadow-[var(--shadow-xs)]',
-        'outline' => 'border border-[var(--border-default)] bg-transparent text-[var(--text-primary)] hover:bg-[var(--surface-hover)] hover:border-[var(--border-hover)]',
-        'ghost' => 'bg-transparent text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]',
-        'link' => 'bg-transparent text-[var(--text-link)] hover:underline p-0 h-auto',
-        'success' => 'bg-[var(--status-success)] text-white hover:opacity-90 shadow-[var(--shadow-xs)] hover:shadow-[var(--shadow-sm)]',
-        'warning' => 'bg-[var(--status-warning)] text-white hover:opacity-90 shadow-[var(--shadow-xs)] hover:shadow-[var(--shadow-sm)]',
-        'danger' => 'bg-[var(--status-error)] text-white hover:opacity-90 shadow-[var(--shadow-xs)] hover:shadow-[var(--shadow-sm)]',
-        'info' => 'bg-[var(--status-info)] text-white hover:opacity-90 shadow-[var(--shadow-xs)] hover:shadow-[var(--shadow-sm)]',
-        default => 'bg-[var(--color-primary)] text-[var(--text-on-primary)] hover:bg-[var(--color-primary-hover)] shadow-[var(--shadow-xs)] hover:shadow-[var(--shadow-sm)]',
+        'secondary' => 'bg-(--surface-card) text-(--text-primary) border border-(--border-default) hover:bg-(--surface-hover) hover:border-(--border-hover) shadow-(--shadow-xs)',
+        'outline' => 'border border-(--border-default) bg-transparent text-(--text-primary) hover:bg-(--surface-hover) hover:border-(--border-hover)',
+        'ghost' => 'bg-transparent text-(--text-secondary) hover:bg-(--surface-hover) hover:text-(--text-primary)',
+        'link' => 'bg-transparent text-(--text-link) hover:underline p-0 h-auto',
+        'success' => 'bg-(--status-success) text-white hover:opacity-90 shadow-(--shadow-xs) hover:shadow-(--shadow-sm)',
+        'warning' => 'bg-(--status-warning) text-white hover:opacity-90 shadow-(--shadow-xs) hover:shadow-(--shadow-sm)',
+        'danger' => 'bg-(--status-error) text-white hover:opacity-90 shadow-(--shadow-xs) hover:shadow-(--shadow-sm)',
+        'info' => 'bg-(--status-info) text-white hover:opacity-90 shadow-(--shadow-xs) hover:shadow-(--shadow-sm)',
+        default => 'bg-(--color-primary) text-(--text-on-primary) hover:bg-(--color-primary-hover) shadow-(--shadow-xs) hover:shadow-(--shadow-sm)',
     };
 
     $stateClass = $isDisabled ? 'opacity-40 cursor-not-allowed pointer-events-none' : '';

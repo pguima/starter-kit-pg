@@ -81,19 +81,19 @@
                     x-transition:leave-end="opacity-0 scale-95 translate-y-4"
                     tabindex="-1"
                     x-on:click.stop
-                    class="relative w-full {{ $panelSizeClass }} overflow-hidden rounded-xl border border-[var(--border-default)] bg-[var(--surface-card)] shadow-[var(--shadow-xl)]"
+                    class="relative w-full {{ $panelSizeClass }} overflow-hidden rounded-xl border border-(--border-default) bg-(--surface-card) shadow-(--shadow-xl)"
                 >
                     <!-- Header -->
-                    <div class="flex items-center justify-between gap-3 px-6 py-4 border-b border-[var(--border-subtle)]">
+                    <div class="flex items-center justify-between gap-3 px-6 py-4 border-b border-(--border-subtle)">
                         <div class="min-w-0">
                             @isset($title)
-                                <div id="{{ $titleId }}" class="text-base font-semibold text-[var(--text-primary)]">
+                                <div id="{{ $titleId }}" class="text-base font-semibold text-(--text-primary)">
                                     {{ $title }}
                                 </div>
                             @endisset
 
                             @isset($description)
-                                <div class="mt-1 text-sm text-[var(--text-secondary)]">
+                                <div class="mt-1 text-sm text-(--text-secondary)">
                                     {{ $description }}
                                 </div>
                             @endisset
@@ -102,7 +102,7 @@
                         @if ($dismissible)
                             <button
                                 type="button"
-                                class="inline-flex h-8 w-8 items-center justify-center rounded-md text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
+                                class="inline-flex h-8 w-8 items-center justify-center rounded-md text-(--text-secondary) transition-colors duration-150 hover:bg-(--surface-hover) hover:text-(--text-primary)"
                                 x-on:click="closeModal()"
                                 aria-label="{{ __('ds.pages.modals.labels.close') }}"
                             >
@@ -112,13 +112,13 @@
                     </div>
 
                     <!-- Body -->
-                    <div class="px-6 py-5 text-[var(--text-primary)]">
+                    <div class="px-6 py-5 text-(--text-primary)">
                         {{ $slot }}
                     </div>
 
                     <!-- Footer -->
                     @isset($footer)
-                        <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-[var(--border-subtle)] bg-[var(--surface-page)]">
+                        <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-(--border-subtle) bg-(--surface-page)">
                             {{ $footer }}
                         </div>
                     @endisset

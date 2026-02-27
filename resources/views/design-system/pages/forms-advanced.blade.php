@@ -5,10 +5,10 @@
         <!-- Header -->
         <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
-                <h1 class="text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+                <h1 class="text-xl font-semibold tracking-tight text-(--text-primary)">
                     {{ __('ds.pages.forms_advanced.title') }}
                 </h1>
-                <div class="mt-1 text-sm text-[var(--text-secondary)]">
+                <div class="mt-1 text-sm text-(--text-secondary)">
                     {{ __('ds.pages.forms_advanced.subtitle') }}
                 </div>
             </div>
@@ -57,7 +57,7 @@
 
             <!-- Documentation -->
             <div class="lg:col-span-2">
-                <div class="mb-6 text-sm font-semibold text-[var(--text-secondary)]">
+                <div class="mb-6 text-sm font-semibold text-(--text-secondary)">
                     {{ __('ds.pages.forms_advanced.docs.title') }}
                 </div>
 
@@ -65,10 +65,10 @@
                     :description="__('ds.pages.forms_advanced.docs.usage_subtitle')">
                     <div class="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div>
-                            <div class="text-sm font-semibold text-[var(--text-primary)]">
+                            <div class="text-sm font-semibold text-(--text-primary)">
                                 {{ __('ds.pages.forms_advanced.docs.select_title') }}</div>
                             <div
-                                class="mt-3 overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-hover)]">
+                                class="mt-3 overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-hover)">
                                 <pre class="overflow-x-auto p-4 text-xs leading-relaxed"><code>@verbatim
                                     <!-- Multiple Select -->
                                     <x-ds::select-search 
@@ -87,10 +87,10 @@
                         </div>
 
                         <div>
-                            <div class="text-sm font-semibold text-[var(--text-primary)]">
+                            <div class="text-sm font-semibold text-(--text-primary)">
                                 {{ __('ds.pages.forms_advanced.docs.mask_title') }}</div>
                             <div
-                                class="mt-3 overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-hover)]">
+                                class="mt-3 overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-hover)">
                                 <pre class="overflow-x-auto p-4 text-xs leading-relaxed"><code>@verbatim
                                     <!-- CPF Mask -->
                                     <x-ds::input-mask mask="cpf" label="CPF" />

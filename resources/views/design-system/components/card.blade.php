@@ -18,23 +18,23 @@
 
     $variantClass = match ($variant) {
         'ghost' => 'bg-transparent',
-        'elevated' => 'bg-[var(--surface-elevated)]',
-        default => 'bg-[var(--surface-card)]',
+        'elevated' => 'bg-(--surface-elevated)',
+        default => 'bg-(--surface-card)',
     };
 
     $shadowClass = match (true) {
         !$shadow => '',
-        $variant === 'elevated' => 'shadow-[var(--shadow-md)]',
-        default => 'shadow-[var(--shadow-sm)]',
+        $variant === 'elevated' => 'shadow-(--shadow-md)',
+        default => 'shadow-(--shadow-sm)',
     };
 
     $hoverClass = $hoverable
-        ? 'hover:shadow-[var(--shadow-md)] hover:border-[var(--border-default)] cursor-pointer'
+        ? 'hover:shadow-(--shadow-md) hover:border-(--border-default) cursor-pointer'
         : '';
 
     $containerClass = implode(' ', array_filter([
         'overflow-hidden rounded-lg transition-all duration-200',
-        $bordered ? 'border border-[var(--border-subtle)]' : '',
+        $bordered ? 'border border-(--border-subtle)' : '',
         $variantClass,
         $shadowClass,
         $hoverClass,
@@ -54,20 +54,20 @@
     @endisset
 
     @isset($header)
-        <div class="border-b border-[var(--border-subtle)] bg-[var(--surface-card)] px-6 py-4">
+        <div class="border-b border-(--border-subtle) bg-(--surface-card) px-6 py-4">
             {{ $header }}
         </div>
     @endisset
 
     <div class="{{ $bodyClass }}">
         @if ($title)
-            <div class="text-base font-semibold text-[var(--text-primary)]">
+            <div class="text-base font-semibold text-(--text-primary)">
                 {{ $title }}
             </div>
         @endif
 
         @if ($description)
-            <div class="mt-2 text-sm text-[var(--text-secondary)]">
+            <div class="mt-2 text-sm text-(--text-secondary)">
                 {{ $description }}
             </div>
         @endif
@@ -82,7 +82,7 @@
     </div>
 
     @isset($footer)
-        <div class="border-t border-[var(--border-subtle)] bg-[var(--surface-card)] px-6 py-4">
+        <div class="border-t border-(--border-subtle) bg-(--surface-card) px-6 py-4">
             {{ $footer }}
         </div>
     @endisset

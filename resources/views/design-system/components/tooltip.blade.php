@@ -86,7 +86,7 @@
             class="pointer-events-none absolute z-50 {{ $positionClass }}"
         >
             <span
-                class="relative inline-flex max-w-xs items-center rounded-md font-medium shadow-[var(--shadow-md)] {{ $sizeClass }}"
+                class="relative inline-flex max-w-xs items-center rounded-md font-medium shadow-(--shadow-md) {{ $sizeClass }}"
                 style="{{ $variantStyle }}"
             >
                 <span class="absolute h-2 w-2 rotate-45 {{ $arrowClass }}" style="{{ $variantStyle }}"></span>

@@ -2,8 +2,8 @@
     <!-- Header -->
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-            <h1 class="text-2xl font-semibold text-[var(--text-primary)]">{{ __('app.users.title') }}</h1>
-            <p class="mt-1 text-sm text-[var(--text-secondary)]">{{ __('app.users.subtitle') }}</p>
+            <h1 class="text-2xl font-semibold text-(--text-primary)">{{ __('app.users.title') }}</h1>
+            <p class="mt-1 text-sm text-(--text-secondary)">{{ __('app.users.subtitle') }}</p>
         </div>
         
         <div class="flex gap-2">
@@ -23,7 +23,7 @@
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
                 <div class="w-full sm:w-40">
                     <div class="flex items-center gap-3">
-                        <span class="shrink-0 text-sm font-medium text-[var(--text-primary)]">{{ __('app.users.per_page') }}</span>
+                        <span class="shrink-0 text-sm font-medium text-(--text-primary)">{{ __('app.users.per_page') }}</span>
                         <x-ds::select
                             wire:model.live="perPage"
                             :options="[
@@ -78,7 +78,7 @@
                                 size="icon"
                                 variant="ghost"
                                 icon="solar:trash-bin-trash-linear"
-                                class="hover:text-[var(--status-error)]"
+                                class="hover:text-(--status-error)"
                                 wire:click.prevent="confirmDelete({{ $user->id }})"
                                 wire:loading.attr="disabled"
                             />
@@ -89,18 +89,18 @@
                                 <img
                                     src="{{ asset('storage/' . $user->avatar_path) }}"
                                     alt="{{ __('app.profile.avatar_alt') }}"
-                                    class="h-12 w-12 rounded-full object-cover border border-[var(--border-subtle)]"
+                                    class="h-12 w-12 rounded-full object-cover border border-(--border-subtle)"
                                     loading="lazy"
                                 />
                             @else
-                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--surface-hover)] text-sm font-bold text-[var(--text-secondary)] border border-[var(--border-subtle)]">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-(--surface-hover) text-sm font-bold text-(--text-secondary) border border-(--border-subtle)">
                                     {{ substr($user->name, 0, 2) }}
                                 </div>
                             @endif
 
                             <div class="mt-3 min-w-0 w-full">
-                                <div class="text-sm font-semibold text-[var(--text-primary)] truncate">{{ $user->name }}</div>
-                                <div class="text-xs text-[var(--text-muted)] truncate">{{ $user->email }}</div>
+                                <div class="text-sm font-semibold text-(--text-primary) truncate">{{ $user->name }}</div>
+                                <div class="text-xs text-(--text-muted) truncate">{{ $user->email }}</div>
                             </div>
                         </div>
 
@@ -119,7 +119,7 @@
                         </div>
                     </x-ds::card>
                 @empty
-                    <div class="py-8 text-center text-sm text-[var(--text-secondary)] sm:col-span-2 xl:col-span-3">
+                    <div class="py-8 text-center text-sm text-(--text-secondary) sm:col-span-2 xl:col-span-3">
                         {{ __('app.users.no_results', ['search' => $search]) }}
                     </div>
                 @endforelse
@@ -131,24 +131,24 @@
         @else
             <x-ds::table :headers="[__('app.users.table.user'), __('app.users.table.role'), __('app.users.table.status'), __('app.users.table.actions')]">
                 @forelse($users as $user)
-                    <tr class="border-b border-[var(--border-subtle)] transition-colors hover:bg-[var(--surface-hover)]" wire:key="{{ $user->id }}">
+                    <tr class="border-b border-(--border-subtle) transition-colors hover:bg-(--surface-hover)" wire:key="{{ $user->id }}">
                         <x-ds::table-cell>
                             <div class="flex items-center gap-3">
                                 @if ($user->avatar_path)
                                     <img
                                         src="{{ asset('storage/' . $user->avatar_path) }}"
                                         alt="{{ __('app.profile.avatar_alt') }}"
-                                        class="h-9 w-9 rounded-full object-cover border border-[var(--border-subtle)]"
+                                        class="h-9 w-9 rounded-full object-cover border border-(--border-subtle)"
                                         loading="lazy"
                                     />
                                 @else
-                                    <div class="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--surface-hover)] text-xs font-bold text-[var(--text-secondary)] border border-[var(--border-subtle)]">
+                                    <div class="flex h-9 w-9 items-center justify-center rounded-full bg-(--surface-hover) text-xs font-bold text-(--text-secondary) border border-(--border-subtle)">
                                         {{ substr($user->name, 0, 2) }}
                                     </div>
                                 @endif
                                 <div>
-                                    <div class="text-sm font-medium text-[var(--text-primary)]">{{ $user->name }}</div>
-                                    <div class="text-xs text-[var(--text-muted)]">{{ $user->email }}</div>
+                                    <div class="text-sm font-medium text-(--text-primary)">{{ $user->name }}</div>
+                                    <div class="text-xs text-(--text-muted)">{{ $user->email }}</div>
                                 </div>
                             </div>
                         </x-ds::table-cell>
@@ -183,7 +183,7 @@
                                     size="icon"
                                     variant="ghost"
                                     icon="solar:trash-bin-trash-linear"
-                                    class="hover:text-[var(--status-error)]"
+                                    class="hover:text-(--status-error)"
                                     wire:click.prevent="confirmDelete({{ $user->id }})"
                                     wire:loading.attr="disabled"
                                 />
@@ -192,7 +192,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4" class="py-8 text-center text-sm text-[var(--text-secondary)]">
+                        <td colspan="4" class="py-8 text-center text-sm text-(--text-secondary)">
                             {{ __('app.users.no_results', ['search' => $search]) }}
                         </td>
                     </tr>
@@ -284,14 +284,14 @@
                 {{ __('app.users.delete.warning') }}
             </x-ds::alert>
             
-            <p class="text-sm text-[var(--text-secondary)]">
-                {!! __('app.users.delete.confirm_help', ['word' => '<span class="select-all font-mono font-bold text-[var(--status-error)]">DELETE</span>']) !!}
+            <p class="text-sm text-(--text-secondary)">
+                {!! __('app.users.delete.confirm_help', ['word' => '<span class="select-all font-mono font-bold text-(--status-error)">DELETE</span>']) !!}
             </p>
 
             <x-ds::input 
                 wire:model.live="deleteConfirmation" 
                 placeholder="{{ __('app.users.delete.placeholder', ['word' => 'DELETE']) }}"
-                class="border-[var(--status-error)] focus:border-[var(--status-error)] focus:ring-[var(--status-error)]/20"
+                class="border-(--status-error) focus:border-(--status-error) focus:ring-(--status-error)/20"
             />
             @error('deleteConfirmation') <span class="text-xs text-red-500">{{ $message }}</span> @enderror
         </div>

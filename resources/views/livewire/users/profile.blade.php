@@ -28,23 +28,23 @@
     <x-ds::card>
         <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div class="flex items-center gap-4 min-w-0">
-                <div class="h-16 w-16 overflow-hidden rounded-full border border-[var(--border-default)] bg-[var(--surface-hover)] shrink-0">
+                <div class="h-16 w-16 overflow-hidden rounded-full border border-(--border-default) bg-(--surface-hover) shrink-0">
                     @if($avatar)
                         <img src="{{ $avatar->temporaryUrl() }}" alt="{{ __('app.profile.avatar_alt') }}" class="h-full w-full object-cover" />
                     @elseif($avatarUrl)
                         <img src="{{ $avatarUrl }}" alt="{{ $name ?? '' }}" class="h-full w-full object-cover" />
                     @else
-                        <div class="flex h-full w-full items-center justify-center text-sm font-semibold text-[var(--text-secondary)]">
+                        <div class="flex h-full w-full items-center justify-center text-sm font-semibold text-(--text-secondary)">
                             {{ $initials ?: 'U' }}
                         </div>
                     @endif
                 </div>
 
                 <div class="min-w-0">
-                    <div class="text-lg font-semibold text-[var(--text-primary)] truncate">
+                    <div class="text-lg font-semibold text-(--text-primary) truncate">
                         {{ $name }}
                     </div>
-                    <div class="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[var(--text-secondary)]">
+                    <div class="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-(--text-secondary)">
                         <span class="inline-flex items-center gap-2">
                             <iconify-icon icon="solar:letter-linear"></iconify-icon>
                             <span class="truncate">{{ $email }}</span>
@@ -69,15 +69,15 @@
 
                     <form wire:submit="saveProfile" class="space-y-5">
                         <div>
-                            <div class="mb-3 text-sm font-medium text-[var(--text-primary)]">{{ __('app.profile.picture') }}</div>
+                            <div class="mb-3 text-sm font-medium text-(--text-primary)">{{ __('app.profile.picture') }}</div>
                             <div class="flex items-start gap-4">
-                                <div class="h-14 w-14 overflow-hidden rounded-full border border-[var(--border-default)] bg-[var(--surface-hover)] shrink-0">
+                                <div class="h-14 w-14 overflow-hidden rounded-full border border-(--border-default) bg-(--surface-hover) shrink-0">
                                     @if($avatar)
                                         <img src="{{ $avatar->temporaryUrl() }}" alt="{{ __('app.profile.avatar_alt') }}" class="h-full w-full object-cover" />
                                     @elseif($avatarUrl)
                                         <img src="{{ $avatarUrl }}" alt="{{ $name ?? '' }}" class="h-full w-full object-cover" />
                                     @else
-                                        <div class="flex h-full w-full items-center justify-center text-xs font-semibold text-[var(--text-secondary)]">
+                                        <div class="flex h-full w-full items-center justify-center text-xs font-semibold text-(--text-secondary)">
                                             {{ $initials ?: 'U' }}
                                         </div>
                                     @endif

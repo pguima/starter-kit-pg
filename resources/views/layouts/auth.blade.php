@@ -54,14 +54,14 @@
 
     <script defer src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
-<body class="min-h-screen bg-[var(--surface-page)] text-[var(--text-primary)] antialiased">
+<body class="min-h-screen bg-(--surface-page) text-(--text-primary) antialiased">
     <main class="min-h-screen grid grid-cols-1 lg:grid-cols-2">
         @if ($authSideImageUrl)
-            <section class="hidden lg:block relative overflow-hidden bg-[var(--surface-card)] border-r border-[var(--border-subtle)]">
+            <section class="hidden lg:block relative overflow-hidden bg-(--surface-card) border-r border-(--border-subtle)">
                 <img src="{{ $authSideImageUrl }}" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
             </section>
         @else
-            <section class="hidden lg:block bg-[var(--surface-card)] border-r border-[var(--border-subtle)]"></section>
+            <section class="hidden lg:block bg-(--surface-card) border-r border-(--border-subtle)"></section>
         @endif
 
         <section class="flex items-center justify-center p-6 lg:p-10">

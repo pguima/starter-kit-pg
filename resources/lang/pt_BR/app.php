@@ -51,6 +51,10 @@ return [
         'per_page' => 'Por página',
         'no_results' => 'Nenhum usuário encontrado para ":search".',
 
+        'validation' => [
+            'email_unique' => 'Este e-mail já está cadastrado.',
+        ],
+
         'table' => [
             'user' => 'Usuário',
             'role' => 'Função',

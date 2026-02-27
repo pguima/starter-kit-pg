@@ -83,9 +83,9 @@
 >
     {{-- Label --}}
     @if ($label)
-        <label for="{{ $id }}" class="text-sm font-medium text-[var(--text-primary)]">
+        <label for="{{ $id }}" class="text-sm font-medium text-(--text-primary)">
             {{ $label }}
-            @if ($required) <span class="text-[var(--status-error)]">*</span> @endif
+            @if ($required) <span class="text-(--status-error)">*</span> @endif
         </label>
     @endif
 
@@ -94,27 +94,27 @@
         <button
             type="button"
             @click="if(!{{ $disabled ? 'true' : 'false' }}) { open = !open; $nextTick(() => $refs.searchInput?.focus()); }"
-            class="flex min-h-[40px] w-full items-center justify-between rounded-lg border bg-[var(--surface-card)] px-3 py-2 text-sm text-[var(--text-primary)] transition-all focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 {{ $disabled ? 'cursor-not-allowed bg-[var(--surface-hover)] text-[var(--text-muted)]' : 'hover:border-[var(--border-hover)]' }} {{ $error ? 'border-[var(--status-error)]' : 'border-[var(--border-default)]' }}"
+            class="flex min-h-[40px] w-full items-center justify-between rounded-lg border bg-(--surface-card) px-3 py-2 text-sm text-(--text-primary) transition-all focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20 {{ $disabled ? 'cursor-not-allowed bg-(--surface-hover) text-(--text-muted)' : 'hover:border-(--border-hover)' }} {{ $error ? 'border-(--status-error)' : 'border-(--border-default)' }}"
         >
             <div class="flex flex-wrap gap-1">
                 @if ($multiple)
                     <template x-if="selected.length === 0">
-                        <span class="text-[var(--text-muted)]">{{ $placeholder }}</span>
+                        <span class="text-(--text-muted)">{{ $placeholder }}</span>
                     </template>
                     <template x-for="val in selected" :key="val">
-                        <span class="inline-flex items-center gap-1 rounded bg-[var(--surface-hover)] px-2 py-0.5 text-xs font-medium text-[var(--text-primary)] border border-[var(--border-subtle)]">
+                        <span class="inline-flex items-center gap-1 rounded bg-(--surface-hover) px-2 py-0.5 text-xs font-medium text-(--text-primary) border border-(--border-subtle)">
                             <span x-text="options.find(o => o.value == val)?.label || val"></span>
-                            <span @click.stop="remove(val)" class="cursor-pointer text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
+                            <span @click.stop="remove(val)" class="cursor-pointer text-(--text-secondary) hover:text-(--text-primary)">
                                 <iconify-icon icon="solar:close-circle-linear"></iconify-icon>
                             </span>
                         </span>
                     </template>
                 @else
-                    <span x-text="displayValue" :class="!selected && 'text-[var(--text-muted)]'"></span>
+                    <span x-text="displayValue" :class="!selected && 'text-(--text-muted)'"></span>
                 @endif
             </div>
             
-            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-[var(--text-secondary)] transition-transform" :class="open ? 'rotate-180' : ''"></iconify-icon>
+            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-(--text-secondary) transition-transform" :class="open ? 'rotate-180' : ''"></iconify-icon>
         </button>
 
         {{-- Dropdown --}}
@@ -126,19 +126,19 @@
             x-transition:leave="transition ease-in duration-75"
             x-transition:leave-start="transform opacity-100 scale-100"
             x-transition:leave-end="transform opacity-0 scale-95"
-            class="absolute z-50 mt-1 max-h-60 w-full overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] shadow-lg"
+            class="absolute z-50 mt-1 max-h-60 w-full overflow-hidden rounded-lg border border-(--border-subtle) bg-(--surface-card) shadow-lg"
             style="display: none;"
         >
             {{-- Search --}}
-            <div class="border-b border-[var(--border-subtle)] p-2">
+            <div class="border-b border-(--border-subtle) p-2">
                 <div class="relative">
-                    <iconify-icon icon="solar:magnifer-linear" class="absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--text-muted)]"></iconify-icon>
+                    <iconify-icon icon="solar:magnifer-linear" class="absolute left-2.5 top-1/2 -translate-y-1/2 text-(--text-muted)"></iconify-icon>
                     <input
                         x-ref="searchInput"
                         x-model="search"
                         type="text"
                         placeholder="{{ $searchPlaceholder }}"
-                        class="w-full rounded bg-[var(--surface-page)] py-1.5 pl-8 pr-3 text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none"
+                        class="w-full rounded bg-(--surface-page) py-1.5 pl-8 pr-3 text-sm text-(--text-primary) placeholder-(--text-muted) focus:outline-none"
                     >
                 </div>
             </div>
@@ -148,18 +148,18 @@
                 <template x-for="option in filteredOptions" :key="option.value">
                     <li
                         @click="select(option.value)"
-                        class="relative flex cursor-pointer select-none items-center px-3 py-2 text-sm text-[var(--text-primary)] hover:bg-[var(--surface-hover)]"
-                        :class="isSelected(option.value) ? 'bg-[var(--color-primary)]/5 text-[var(--color-primary)] font-medium' : ''"
+                        class="relative flex cursor-pointer select-none items-center px-3 py-2 text-sm text-(--text-primary) hover:bg-(--surface-hover)"
+                        :class="isSelected(option.value) ? 'bg-(--color-primary)/5 text-(--color-primary) font-medium' : ''"
                     >
                         <span x-text="option.label"></span>
                         <iconify-icon
                             x-show="isSelected(option.value)"
                             icon="solar:check-read-linear"
-                            class="absolute right-3 text-[var(--color-primary)]"
+                            class="absolute right-3 text-(--color-primary)"
                         ></iconify-icon>
                     </li>
                 </template>
-                <li x-show="filteredOptions.length === 0" class="px-3 py-2 text-sm text-[var(--text-muted)] text-center">
+                <li x-show="filteredOptions.length === 0" class="px-3 py-2 text-sm text-(--text-muted) text-center">
                     No results found
                 </li>
             </ul>
@@ -177,8 +177,8 @@
 
     {{-- Helpers --}}
     @if ($error)
-        <p class="text-xs text-[var(--status-error)]">{{ $error }}</p>
+        <p class="text-xs text-(--status-error)">{{ $error }}</p>
     @elseif ($helper)
-        <p class="text-xs text-[var(--text-secondary)]">{{ $helper }}</p>
+        <p class="text-xs text-(--text-secondary)">{{ $helper }}</p>
     @endif
 </div>

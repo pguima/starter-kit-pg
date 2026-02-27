@@ -13,18 +13,18 @@
 
 <div class="w-full">
     @if ($label)
-        <label class="mb-2 block text-sm font-medium text-[var(--text-primary)]">
+        <label class="mb-2 block text-sm font-medium text-(--text-primary)">
             {{ $label }}
         </label>
     @endif
     
-    <div class="relative flex w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-[var(--border-default)] bg-[var(--surface-page)] transition-colors hover:bg-[var(--surface-hover)] {{ $disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer' }}">
+    <div class="relative flex w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-(--border-default) bg-(--surface-page) transition-colors hover:bg-(--surface-hover) {{ $disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer' }}">
         <div class="flex flex-col items-center justify-center pb-6 pt-5">
-            <iconify-icon icon="solar:cloud-upload-linear" class="mb-3 text-3xl text-[var(--text-muted)]"></iconify-icon>
-            <p class="mb-2 text-sm text-[var(--text-secondary)]">
-                <span class="font-semibold text-[var(--color-primary)]">Click to upload</span> or drag and drop
+            <iconify-icon icon="solar:cloud-upload-linear" class="mb-3 text-3xl text-(--text-muted)"></iconify-icon>
+            <p class="mb-2 text-sm text-(--text-secondary)">
+                <span class="font-semibold text-(--color-primary)">Click to upload</span> or drag and drop
             </p>
-            <p class="text-xs text-[var(--text-muted)]">{{ $helper }}</p>
+            <p class="text-xs text-(--text-muted)">{{ $helper }}</p>
         </div>
         <input 
             id="{{ $id }}"
@@ -37,6 +37,6 @@
     </div>
 
     @if ($error)
-        <p class="mt-1 text-xs text-[var(--status-error)]">{{ $error }}</p>
+        <p class="mt-1 text-xs text-(--status-error)">{{ $error }}</p>
     @endif
 </div>

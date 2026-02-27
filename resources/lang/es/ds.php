@@ -17,6 +17,11 @@ return array_replace_recursive($base, [
         'my_profile' => 'Mi Perfil',
         'logout' => 'Salir',
         'language' => 'Idioma',
+        'locales' => [
+            'pt_BR' => 'Português',
+            'en' => 'English',
+            'es' => 'Español',
+        ],
         'view_all' => 'Ver todo',
     ],
     'sidebar' => [

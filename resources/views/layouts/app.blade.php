@@ -36,7 +36,7 @@
     <script defer src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
-<body class="min-h-screen bg-[var(--surface-page)] text-[var(--text-primary)] antialiased">
+<body class="min-h-screen bg-(--surface-page) text-(--text-primary) antialiased">
     <div x-data="{ sidebarOpen: false, sidebarCollapsed: false, isDark: document.documentElement.classList.contains('dark') }"
         class="min-h-screen">
 

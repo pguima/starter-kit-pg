@@ -1,8 +1,8 @@
 <div class="space-y-6">
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-            <h1 class="text-2xl font-semibold text-[var(--text-primary)]">{{ __('app.settings.title') }}</h1>
-            <p class="mt-1 text-sm text-[var(--text-secondary)]">{{ __('app.settings.subtitle') }}</p>
+            <h1 class="text-2xl font-semibold text-(--text-primary)">{{ __('app.settings.title') }}</h1>
+            <p class="mt-1 text-sm text-(--text-secondary)">{{ __('app.settings.subtitle') }}</p>
         </div>
 
         <div class="flex gap-2">
@@ -38,8 +38,8 @@
                     />
 
                     @if ($logo_light)
-                        <div class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4">
-                            <div class="text-xs font-medium text-[var(--text-secondary)]">Preview</div>
+                        <div class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4">
+                            <div class="text-xs font-medium text-(--text-secondary)">Preview</div>
                             <img
                                 src="{{ $logo_light->temporaryUrl() }}"
                                 alt="logo"
@@ -50,8 +50,8 @@
                     @endif
 
                     @if ($current_logo_light_path)
-                        <div class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4">
-                            <div class="text-xs font-medium text-[var(--text-secondary)]">{{ __('app.settings.current') }}</div>
+                        <div class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4">
+                            <div class="text-xs font-medium text-(--text-secondary)">{{ __('app.settings.current') }}</div>
                             <img
                                 src="{{ route('company.assets.show', ['asset' => 'logo-light']) }}"
                                 alt="logo"
@@ -72,8 +72,8 @@
                     />
 
                     @if ($logo_dark)
-                        <div class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4">
-                            <div class="text-xs font-medium text-[var(--text-secondary)]">Preview</div>
+                        <div class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4">
+                            <div class="text-xs font-medium text-(--text-secondary)">Preview</div>
                             <img
                                 src="{{ $logo_dark->temporaryUrl() }}"
                                 alt="logo"
@@ -84,8 +84,8 @@
                     @endif
 
                     @if ($current_logo_dark_path)
-                        <div class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4">
-                            <div class="text-xs font-medium text-[var(--text-secondary)]">{{ __('app.settings.current') }}</div>
+                        <div class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4">
+                            <div class="text-xs font-medium text-(--text-secondary)">{{ __('app.settings.current') }}</div>
                             <img
                                 src="{{ route('company.assets.show', ['asset' => 'logo-dark']) }}"
                                 alt="logo"
@@ -107,8 +107,8 @@
                 />
 
                 @if ($favicon)
-                    <div class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4">
-                        <div class="text-xs font-medium text-[var(--text-secondary)]">Preview</div>
+                    <div class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4">
+                        <div class="text-xs font-medium text-(--text-secondary)">Preview</div>
                         <img
                             src="{{ $favicon->temporaryUrl() }}"
                             alt="favicon"
@@ -119,8 +119,8 @@
                 @endif
 
                 @if ($current_favicon_path)
-                    <div class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4">
-                        <div class="text-xs font-medium text-[var(--text-secondary)]">{{ __('app.settings.current') }}</div>
+                    <div class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4">
+                        <div class="text-xs font-medium text-(--text-secondary)">{{ __('app.settings.current') }}</div>
                         <img
                             src="{{ route('company.assets.show', ['asset' => 'favicon']) }}"
                             alt="favicon"
@@ -141,8 +141,8 @@
                 />
 
                 @if ($auth_side_image)
-                    <div class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4">
-                        <div class="text-xs font-medium text-[var(--text-secondary)]">Preview</div>
+                    <div class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4">
+                        <div class="text-xs font-medium text-(--text-secondary)">Preview</div>
                         <img
                             src="{{ $auth_side_image->temporaryUrl() }}"
                             alt="auth-side"
@@ -153,8 +153,8 @@
                 @endif
 
                 @if ($current_auth_side_image_path)
-                    <div class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4">
-                        <div class="text-xs font-medium text-[var(--text-secondary)]">{{ __('app.settings.current') }}</div>
+                    <div class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4">
+                        <div class="text-xs font-medium text-(--text-secondary)">{{ __('app.settings.current') }}</div>
                         <img
                             src="{{ route('company.assets.show', ['asset' => 'auth-side']) }}"
                             alt="auth-side"

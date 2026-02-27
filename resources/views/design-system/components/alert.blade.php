@@ -97,7 +97,7 @@
         @if ($dismissible)
             <button
                 type="button"
-                class="-mt-1 inline-flex h-7 w-7 items-center justify-center rounded-md opacity-70 transition-opacity duration-150 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20"
+                class="-mt-1 inline-flex h-7 w-7 items-center justify-center rounded-md opacity-70 transition-opacity duration-150 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20"
                 @click="open = false"
                 aria-label="Close"
             >

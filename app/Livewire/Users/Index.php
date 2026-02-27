@@ -59,7 +59,7 @@ class Index extends Component
     public function messages(): array
     {
         return [
-            'email.unique' => 'Este e-mail já está cadastrado.',
+            'email.unique' => __('app.users.validation.email_unique'),
         ];
     }
 

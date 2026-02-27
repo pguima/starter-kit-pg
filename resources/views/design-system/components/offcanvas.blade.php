@@ -60,7 +60,7 @@
     $isHorizontal = in_array($position, ['left', 'right']);
 
     $panelBase = implode(' ', [
-        'fixed z-[60] flex flex-col bg-[var(--surface-card)] shadow-[var(--shadow-xl)]',
+        'fixed z-[60] flex flex-col bg-(--surface-card) shadow-(--shadow-xl)',
         $positionClass,
         $sizeClass,
         $isHorizontal ? 'h-full' : 'w-full',
@@ -117,15 +117,15 @@
     >
         {{-- Header --}}
         @if ($dismissible || isset($title))
-            <div class="flex items-center justify-between gap-4 border-b border-[var(--border-subtle)] px-5 py-4">
+            <div class="flex items-center justify-between gap-4 border-b border-(--border-subtle) px-5 py-4">
                 <div class="min-w-0 flex-1">
                     @isset($title)
-                        <h3 id="{{ $offcanvasId }}-title" class="truncate text-base font-semibold text-[var(--text-primary)]">
+                        <h3 id="{{ $offcanvasId }}-title" class="truncate text-base font-semibold text-(--text-primary)">
                             {{ $title }}
                         </h3>
                     @endisset
                     @isset($description)
-                        <p class="mt-1 text-sm text-[var(--text-secondary)]">
+                        <p class="mt-1 text-sm text-(--text-secondary)">
                             {{ $description }}
                         </p>
                     @endisset
@@ -134,7 +134,7 @@
                 @if ($dismissible)
                     <button
                         type="button"
-                        class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20"
+                        class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-(--text-secondary) transition-colors duration-150 hover:bg-(--surface-hover) hover:text-(--text-primary) focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20"
                         x-on:click="open = false"
                         aria-label="{{ __('ds.actions.close') }}"
                     >
@@ -151,7 +151,7 @@
 
         {{-- Footer --}}
         @isset($footer)
-            <div class="border-t border-[var(--border-subtle)] px-5 py-4">
+            <div class="border-t border-(--border-subtle) px-5 py-4">
                 {{ $footer }}
             </div>
         @endisset

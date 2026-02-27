@@ -32,12 +32,12 @@
             @if($disabled) disabled @endif
             {{ $attributes->except('class') }}
         >
-        <div class="{{ $wrapperClass }} cursor-pointer rounded-full bg-[var(--surface-hover)] border border-[var(--border-subtle)] transition-colors peer-focus:ring-2 peer-focus:ring-[var(--color-primary)]/20 peer-checked:bg-[var(--color-primary)] peer-disabled:cursor-not-allowed peer-disabled:opacity-50"></div>
+        <div class="{{ $wrapperClass }} cursor-pointer rounded-full bg-(--surface-hover) border border-(--border-subtle) transition-colors peer-focus:ring-2 peer-focus:ring-(--color-primary)/20 peer-checked:bg-(--color-primary) peer-disabled:cursor-not-allowed peer-disabled:opacity-50"></div>
         <div class="pointer-events-none absolute rounded-full bg-white transition-transform {{ $circleClass }}"></div>
     </div>
     
     @if ($label)
-        <label for="{{ $id }}" class="text-sm font-medium text-[var(--text-primary)] cursor-pointer select-none {{ $disabled ? 'cursor-not-allowed opacity-50' : '' }}">
+        <label for="{{ $id }}" class="text-sm font-medium text-(--text-primary) cursor-pointer select-none {{ $disabled ? 'cursor-not-allowed opacity-50' : '' }}">
             {{ $label }}
         </label>
     @endif

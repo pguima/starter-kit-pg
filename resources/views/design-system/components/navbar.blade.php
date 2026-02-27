@@ -1,5 +1,5 @@
 <header
-    class="fixed top-0 z-50 w-full border-b border-[var(--border-subtle)] bg-[var(--surface-card)]/95 backdrop-blur-sm">
+    class="fixed top-0 z-50 w-full border-b border-(--border-subtle) bg-(--surface-card)/95 backdrop-blur-sm">
     <div class="flex h-16 items-center justify-between gap-4 px-4">
         <!-- Left side -->
         <div class="flex items-center gap-3 min-w-0">
@@ -11,14 +11,14 @@
             @if ($showSidebarToggle)
                 <!-- Mobile menu button -->
                 <button type="button"
-                    class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border-default)] bg-[var(--surface-hover)] text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--surface-selected)] hover:text-[var(--text-primary)] lg:hidden"
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-(--border-default) bg-(--surface-hover) text-(--text-secondary) transition-colors duration-150 hover:bg-(--surface-selected) hover:text-(--text-primary) lg:hidden"
                     @click="sidebarOpen = true">
                     <iconify-icon icon="heroicons:bars-3-solid" class="text-lg"></iconify-icon>
                 </button>
 
                 <!-- Desktop sidebar toggle -->
                 <button type="button"
-                    class="hidden lg:inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border-default)] bg-[var(--surface-hover)] text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--surface-selected)] hover:text-[var(--text-primary)]"
+                    class="hidden lg:inline-flex h-9 w-9 items-center justify-center rounded-md border border-(--border-default) bg-(--surface-hover) text-(--text-secondary) transition-colors duration-150 hover:bg-(--surface-selected) hover:text-(--text-primary)"
                     @click="sidebarCollapsed = !sidebarCollapsed">
                     <iconify-icon x-show="!sidebarCollapsed" x-cloak icon="heroicons:bars-3-solid"
                         class="text-lg"></iconify-icon>
@@ -29,7 +29,7 @@
 
             <!-- Brand -->
             <a href="{{ $brandHref ?: (request()->is('design-system*') ? url('/design-system') : url('/profile')) }}"
-                class="font-semibold text-[var(--text-primary)] tracking-tight shrink-0 hover:text-[var(--color-primary)] transition-colors duration-150">
+                class="font-semibold text-(--text-primary) tracking-tight shrink-0 hover:text-(--color-primary) transition-colors duration-150">
                 @php
                     $companySettings = \App\Models\CompanySetting::current();
                     $companyName = $companySettings?->company_name;
@@ -58,7 +58,7 @@
         <div class="flex items-center gap-2">
             <!-- Theme toggle -->
             <button type="button"
-                class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[var(--surface-hover)] text-[var(--text-secondary)] transition-all duration-150 hover:bg-[var(--surface-selected)] hover:text-[var(--text-primary)]"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-(--surface-hover) text-(--text-secondary) transition-all duration-150 hover:bg-(--surface-selected) hover:text-(--text-primary)"
                 @click="(() => { isDark = document.documentElement.classList.toggle('dark'); localStorage.setItem('ds_theme', isDark ? 'dark' : 'light'); })()">
                 <iconify-icon x-show="!isDark" x-cloak icon="ri:moon-line" class="text-xl"></iconify-icon>
                 <iconify-icon x-show="isDark" x-cloak icon="ri:sun-line" class="text-xl"></iconify-icon>
@@ -67,7 +67,7 @@
             <!-- Notifications -->
             <div class="relative hidden" x-data="{ open: false }">
                 <button type="button"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[var(--surface-hover)] text-[var(--text-secondary)] transition-all duration-150 hover:bg-[var(--surface-selected)] hover:text-[var(--text-primary)]"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-(--surface-hover) text-(--text-secondary) transition-all duration-150 hover:bg-(--surface-selected) hover:text-(--text-primary)"
                     @click="open = !open">
                     <iconify-icon icon="iconoir:bell" class="text-xl"></iconify-icon>
                 </button>
@@ -77,21 +77,21 @@
                     x-transition:leave="transition ease-in duration-100"
                     x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                     @click.outside="open = false"
-                    class="absolute right-0 mt-2 w-72 origin-top-right overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-card)] shadow-[var(--shadow-lg)]">
-                    <div class="p-3 border-b border-[var(--border-subtle)]">
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">
+                    class="absolute right-0 mt-2 w-72 origin-top-right overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-card) shadow-(--shadow-lg)">
+                    <div class="p-3 border-b border-(--border-subtle)">
+                        <div class="text-sm font-semibold text-(--text-primary)">
                             {{ __('ds.navbar.notifications') }}
                         </div>
                     </div>
                     <div class="max-h-64 overflow-y-auto">
                         <a href="javascript:void(0)"
-                            class="flex items-start gap-3 px-4 py-3 text-sm text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--surface-hover)]">
-                            <span class="h-2 w-2 mt-1.5 rounded-full bg-[var(--color-primary)] shrink-0"></span>
+                            class="flex items-start gap-3 px-4 py-3 text-sm text-(--text-secondary) transition-colors duration-150 hover:bg-(--surface-hover)">
+                            <span class="h-2 w-2 mt-1.5 rounded-full bg-(--color-primary) shrink-0"></span>
                             <span>{{ __('ds.navbar.notification_item') }}</span>
                         </a>
                     </div>
-                    <div class="p-3 border-t border-[var(--border-subtle)]">
-                        <a href="#" class="text-sm font-medium text-[var(--color-primary)] hover:underline">{{ __('ds.navbar.view_all') }}</a>
+                    <div class="p-3 border-t border-(--border-subtle)">
+                        <a href="#" class="text-sm font-medium text-(--color-primary) hover:underline">{{ __('ds.navbar.view_all') }}</a>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
             <!-- Language -->
             <div class="relative" x-data="{ open: false }">
                 <button type="button"
-                    class="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-[var(--surface-hover)] px-3 text-sm font-medium text-[var(--text-secondary)] transition-all duration-150 hover:bg-[var(--surface-selected)] hover:text-[var(--text-primary)]"
+                    class="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-(--surface-hover) px-3 text-sm font-medium text-(--text-secondary) transition-all duration-150 hover:bg-(--surface-selected) hover:text-(--text-primary)"
                     @click="open = !open">
                     <iconify-icon icon="solar:global-linear" class="text-lg"></iconify-icon>
                     <span class="hidden sm:inline">{{ __('ds.navbar.language') }}</span>
@@ -109,14 +109,14 @@
                     x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                     x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100"
                     x-transition:leave-end="opacity-0 scale-95" @click.outside="open = false"
-                    class="absolute right-0 mt-2 w-44 origin-top-right overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-card)] shadow-[var(--shadow-lg)]">
+                    class="absolute right-0 mt-2 w-44 origin-top-right overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-card) shadow-(--shadow-lg)">
                     <div class="py-2">
                         <a href="{{ route('locale.set', ['locale' => 'pt_BR']) }}"
-                            class="block px-4 py-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]">Português</a>
+                            class="block px-4 py-2 text-sm text-(--text-secondary) hover:bg-(--surface-hover) hover:text-(--text-primary)">{{ __('ds.navbar.locales.pt_BR') }}</a>
                         <a href="{{ route('locale.set', ['locale' => 'en']) }}"
-                            class="block px-4 py-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]">English</a>
+                            class="block px-4 py-2 text-sm text-(--text-secondary) hover:bg-(--surface-hover) hover:text-(--text-primary)">{{ __('ds.navbar.locales.en') }}</a>
                         <a href="{{ route('locale.set', ['locale' => 'es']) }}"
-                            class="block px-4 py-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]">Español</a>
+                            class="block px-4 py-2 text-sm text-(--text-secondary) hover:bg-(--surface-hover) hover:text-(--text-primary)">{{ __('ds.navbar.locales.es') }}</a>
                     </div>
                 </div>
             </div>
@@ -145,7 +145,7 @@
                             class="h-10 w-10 rounded-full object-cover" />
                     @else
                         <span
-                            class="h-10 w-10 rounded-full bg-[var(--color-primary)] inline-flex items-center justify-center text-sm font-semibold text-white">
+                            class="h-10 w-10 rounded-full bg-(--color-primary) inline-flex items-center justify-center text-sm font-semibold text-white">
                             {{ $initials ?: 'U' }}
                         </span>
                     @endif
@@ -156,23 +156,23 @@
                     x-transition:leave="transition ease-in duration-100"
                     x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                     @click.outside="open = false"
-                    class="absolute right-0 mt-2 w-64 origin-top-right overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-card)] shadow-[var(--shadow-lg)]">
-                    <div class="p-4 border-b border-[var(--border-subtle)]">
+                    class="absolute right-0 mt-2 w-64 origin-top-right overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-card) shadow-(--shadow-lg)">
+                    <div class="p-4 border-b border-(--border-subtle)">
                         <div class="flex items-center gap-3">
                             @if($user && $avatarUrl)
                                 <img src="{{ $avatarUrl }}" alt="{{ $name ?? '' }}"
                                     class="h-12 w-12 rounded-full object-cover shrink-0" />
                             @else
                                 <span
-                                    class="h-12 w-12 rounded-full bg-[var(--color-primary)] inline-flex items-center justify-center text-base font-semibold text-white shrink-0">
+                                    class="h-12 w-12 rounded-full bg-(--color-primary) inline-flex items-center justify-center text-base font-semibold text-white shrink-0">
                                     {{ $initials ?: 'U' }}
                                 </span>
                             @endif
                             <div class="min-w-0">
-                                <div class="text-sm font-semibold text-[var(--text-primary)] truncate">
+                                <div class="text-sm font-semibold text-(--text-primary) truncate">
                                     {{ $name ?: __('ds.navbar.profile_name') }}
                                 </div>
-                                <div class="text-xs text-[var(--text-secondary)] truncate">
+                                <div class="text-xs text-(--text-secondary) truncate">
                                     {{ $role ?: __('ds.navbar.profile_role') }}
                                 </div>
                             </div>
@@ -180,26 +180,26 @@
                     </div>
                     <div class="py-2">
                         <a href="{{ url('/profile') }}"
-                            class="flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]">
+                            class="flex items-center gap-3 px-4 py-2.5 text-sm text-(--text-secondary) transition-colors duration-150 hover:bg-(--surface-hover) hover:text-(--text-primary)">
                             <iconify-icon icon="solar:user-linear" class="text-xl"></iconify-icon>
                             <span>{{ __('ds.navbar.my_profile') }}</span>
                         </a>
                         <a href="javascript:void(0)"
-                            class="flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]">
+                            class="flex items-center gap-3 px-4 py-2.5 text-sm text-(--text-secondary) transition-colors duration-150 hover:bg-(--surface-hover) hover:text-(--text-primary)">
                             <iconify-icon icon="tabler:message-check" class="text-xl"></iconify-icon>
                             <span>{{ __('ds.navbar.inbox') }}</span>
                         </a>
                         <a href="javascript:void(0)"
-                            class="flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]">
+                            class="flex items-center gap-3 px-4 py-2.5 text-sm text-(--text-secondary) transition-colors duration-150 hover:bg-(--surface-hover) hover:text-(--text-primary)">
                             <iconify-icon icon="icon-park-outline:setting-two" class="text-xl"></iconify-icon>
                             <span>{{ __('ds.navbar.settings') }}</span>
                         </a>
                     </div>
-                    <div class="py-2 border-t border-[var(--border-subtle)]">
+                    <div class="py-2 border-t border-(--border-subtle)">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit"
-                                class="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--status-error)] transition-colors duration-150 hover:bg-[var(--status-error-light)]">
+                                class="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-(--status-error) transition-colors duration-150 hover:bg-(--status-error-light)">
                                 <iconify-icon icon="lucide:power" class="text-xl"></iconify-icon>
                                 <span>{{ __('ds.navbar.logout') }}</span>
                             </button>

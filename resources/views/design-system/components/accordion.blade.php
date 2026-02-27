@@ -10,8 +10,8 @@
     $baseItemClass = 'overflow-hidden rounded-lg transition-all duration-200';
 
     $itemBorderClass = match ($variant) {
-        'ghost' => 'border border-[var(--border-subtle)]',
-        default => 'border border-[var(--border-default)]',
+        'ghost' => 'border border-(--border-subtle)',
+        default => 'border border-(--border-default)',
     };
 
     $buttonPaddingClass = match ($size) {
@@ -69,20 +69,20 @@
         @endphp
 
         <div
-            class="{{ $baseItemClass }} {{ $itemBorderClass }} bg-[var(--surface-card)]"
-            :class="isOpen({{ $index }}) ? 'shadow-[var(--shadow-sm)]' : ''"
+            class="{{ $baseItemClass }} {{ $itemBorderClass }} bg-(--surface-card)"
+            :class="isOpen({{ $index }}) ? 'shadow-(--shadow-sm)' : ''"
         >
             <h3 id="{{ $headingId }}">
                 <button
                     type="button"
-                    class="flex w-full items-center justify-between gap-3 bg-transparent text-left font-semibold text-[var(--text-primary)] transition-colors duration-150 hover:text-[var(--color-primary)] {{ $buttonPaddingClass }}"
+                    class="flex w-full items-center justify-between gap-3 bg-transparent text-left font-semibold text-(--text-primary) transition-colors duration-150 hover:text-(--color-primary) {{ $buttonPaddingClass }}"
                     x-on:click="toggle({{ $index }})"
                     x-bind:aria-expanded="isOpen({{ $index }}) ? 'true' : 'false'"
                     aria-controls="{{ $panelId }}"
                 >
                     <span class="flex min-w-0 items-center gap-3">
                         @if ($icon)
-                            <iconify-icon icon="{{ $icon }}" class="text-lg text-[var(--text-secondary)]"></iconify-icon>
+                            <iconify-icon icon="{{ $icon }}" class="text-lg text-(--text-secondary)"></iconify-icon>
                         @endif
                         <span class="truncate">{{ $title }}</span>
                         @if ($badge)
@@ -91,8 +91,8 @@
                     </span>
 
                     <span
-                        class="inline-flex h-6 w-6 items-center justify-center rounded-md border border-[var(--border-subtle)] text-[var(--text-secondary)] transition-all duration-200"
-                        :class="isOpen({{ $index }}) ? 'bg-[var(--color-primary-light)] border-[var(--color-primary-light)] text-[var(--color-primary)]' : ''"
+                        class="inline-flex h-6 w-6 items-center justify-center rounded-md border border-(--border-subtle) text-(--text-secondary) transition-all duration-200"
+                        :class="isOpen({{ $index }}) ? 'bg-(--color-primary-light) border-(--color-primary-light) text-(--color-primary)' : ''"
                     >
                         <iconify-icon
                             icon="solar:alt-arrow-down-linear"
@@ -115,9 +115,9 @@
                 x-transition:leave="transition ease-in duration-100"
                 x-transition:leave-start="opacity-100 translate-y-0"
                 x-transition:leave-end="opacity-0 -translate-y-1"
-                class="text-[var(--text-secondary)]"
+                class="text-(--text-secondary)"
             >
-                <div class="{{ $contentPaddingClass }} border-t border-[var(--border-subtle)]">
+                <div class="{{ $contentPaddingClass }} border-t border-(--border-subtle)">
                     {{ $content }}
                 </div>
             </div>

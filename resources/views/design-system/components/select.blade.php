@@ -16,13 +16,13 @@
     $id = $id ?? $name ?? 'select-' . uniqid();
     
     $containerClass = 'flex flex-col gap-1.5 w-full';
-    $labelClass = 'text-sm font-medium text-[var(--text-primary)]';
+    $labelClass = 'text-sm font-medium text-(--text-primary)';
     
-    $baseClass = 'w-full appearance-none rounded-lg border bg-[var(--surface-card)] text-[var(--text-primary)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 disabled:cursor-not-allowed disabled:bg-[var(--surface-hover)] disabled:text-[var(--text-muted)]';
+    $baseClass = 'w-full appearance-none rounded-lg border bg-(--surface-card) text-(--text-primary) transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20 disabled:cursor-not-allowed disabled:bg-(--surface-hover) disabled:text-(--text-muted)';
     
     $borderClass = $error 
-        ? 'border-[var(--status-error)] focus:border-[var(--status-error)] focus:ring-[var(--status-error)]/20' 
-        : 'border-[var(--border-default)] focus:border-[var(--color-primary)] hover:border-[var(--border-hover)]';
+        ? 'border-(--status-error) focus:border-(--status-error) focus:ring-(--status-error)/20' 
+        : 'border-(--border-default) focus:border-(--color-primary) hover:border-(--border-hover)';
 
     $sizeClass = match ($size) {
         'sm' => 'h-8 py-1 pl-2.5 pr-8 text-xs',
@@ -35,21 +35,21 @@
     $selectClasses = implode(' ', [$baseClass, $borderClass, $sizeClass, $paddingClass]);
     
     $messageClass = 'text-xs';
-    $errorClass = 'text-[var(--status-error)]';
-    $helperClass = 'text-[var(--text-secondary)]';
+    $errorClass = 'text-(--status-error)';
+    $helperClass = 'text-(--text-secondary)';
 @endphp
 
 <div class="{{ $containerClass }}">
     @if ($label)
         <label for="{{ $id }}" class="{{ $labelClass }}">
             {{ $label }}
-            @if ($required) <span class="text-[var(--status-error)]">*</span> @endif
+            @if ($required) <span class="text-(--status-error)">*</span> @endif
         </label>
     @endif
 
     <div class="relative">
         @if ($icon)
-            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-(--text-secondary)">
                 <iconify-icon icon="{{ $icon }}" class="{{ $size === 'sm' ? 'text-sm' : ($size === 'lg' ? 'text-xl' : 'text-lg') }}"></iconify-icon>
             </div>
         @endif
@@ -79,7 +79,7 @@
         </select>
 
         {{-- Chevron Icon --}}
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-[var(--text-secondary)]">
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-(--text-secondary)">
             <iconify-icon icon="solar:alt-arrow-down-linear" class="{{ $size === 'sm' ? 'text-sm' : 'text-lg' }}"></iconify-icon>
         </div>
     </div>

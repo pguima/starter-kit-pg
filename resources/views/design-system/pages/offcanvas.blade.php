@@ -5,10 +5,10 @@
         <!-- Header -->
         <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
-                <h1 class="text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+                <h1 class="text-xl font-semibold tracking-tight text-(--text-primary)">
                     {{ __('ds.pages.offcanvas.title') }}
                 </h1>
-                <div class="mt-1 text-sm text-[var(--text-secondary)]">
+                <div class="mt-1 text-sm text-(--text-secondary)">
                     {{ __('ds.pages.offcanvas.subtitle') }}
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.right_title') }}</x-slot:title>
                         <x-slot:description>{{ __('ds.pages.offcanvas.labels.right_description') }}</x-slot:description>
 
-                        <div class="space-y-4 text-sm text-[var(--text-secondary)]">
+                        <div class="space-y-4 text-sm text-(--text-secondary)">
                             <p>{{ __('ds.pages.offcanvas.labels.content_body') }}</p>
                             <x-ds::alert variant="info" style="soft" icon="solar:info-circle-linear" :dismissible="false">
                                 {{ __('ds.pages.offcanvas.labels.alert_info') }}
@@ -53,7 +53,7 @@
 
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.left_title') }}</x-slot:title>
 
-                        <div class="space-y-4 text-sm text-[var(--text-secondary)]">
+                        <div class="space-y-4 text-sm text-(--text-secondary)">
                             <p>{{ __('ds.pages.offcanvas.labels.content_body') }}</p>
                             <div class="flex flex-wrap gap-2">
                                 <x-ds::tag variant="purple">{{ __('ds.pages.offcanvas.labels.tag') }}</x-ds::tag>
@@ -76,7 +76,7 @@
 
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.top_title') }}</x-slot:title>
 
-                        <div class="text-sm text-[var(--text-secondary)]">
+                        <div class="text-sm text-(--text-secondary)">
                             {{ __('ds.pages.offcanvas.labels.content_body') }}
                         </div>
                     </x-ds::offcanvas>
@@ -89,7 +89,7 @@
 
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.bottom_title') }}</x-slot:title>
 
-                        <div class="text-sm text-[var(--text-secondary)]">
+                        <div class="text-sm text-(--text-secondary)">
                             {{ __('ds.pages.offcanvas.labels.content_body') }}
                         </div>
                     </x-ds::offcanvas>
@@ -109,7 +109,7 @@
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.small_title') }}</x-slot:title>
                         <x-slot:description>{{ __('ds.pages.offcanvas.labels.size_sm_desc') }}</x-slot:description>
 
-                        <div class="text-sm text-[var(--text-secondary)]">
+                        <div class="text-sm text-(--text-secondary)">
                             {{ __('ds.pages.offcanvas.labels.content_body') }}
                         </div>
                     </x-ds::offcanvas>
@@ -122,7 +122,7 @@
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.medium_title') }}</x-slot:title>
                         <x-slot:description>{{ __('ds.pages.offcanvas.labels.size_md_desc') }}</x-slot:description>
 
-                        <div class="text-sm text-[var(--text-secondary)]">
+                        <div class="text-sm text-(--text-secondary)">
                             {{ __('ds.pages.offcanvas.labels.content_body') }}
                         </div>
                     </x-ds::offcanvas>
@@ -136,7 +136,7 @@
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.large_title') }}</x-slot:title>
                         <x-slot:description>{{ __('ds.pages.offcanvas.labels.size_lg_desc') }}</x-slot:description>
 
-                        <div class="text-sm text-[var(--text-secondary)]">
+                        <div class="text-sm text-(--text-secondary)">
                             {{ __('ds.pages.offcanvas.labels.content_body') }}
                         </div>
                     </x-ds::offcanvas>
@@ -150,7 +150,7 @@
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.xlarge_title') }}</x-slot:title>
                         <x-slot:description>{{ __('ds.pages.offcanvas.labels.size_xl_desc') }}</x-slot:description>
 
-                        <div class="space-y-4 text-sm text-[var(--text-secondary)]">
+                        <div class="space-y-4 text-sm text-(--text-secondary)">
                             <p>{{ __('ds.pages.offcanvas.labels.content_body') }}</p>
                             <x-ds::tabs variant="pill" :tabs="[
             ['label' => __('ds.pages.offcanvas.labels.tab_one'), 'content' => __('ds.pages.offcanvas.labels.tab_one_body')],
@@ -197,7 +197,7 @@
                         <x-slot:title>{{ __('ds.pages.offcanvas.labels.no_backdrop_title') }}</x-slot:title>
                         <x-slot:description>{{ __('ds.pages.offcanvas.labels.no_backdrop_description') }}</x-slot:description>
 
-                        <div class="text-sm text-[var(--text-secondary)]">
+                        <div class="text-sm text-(--text-secondary)">
                             {{ __('ds.pages.offcanvas.labels.no_backdrop_body') }}
                         </div>
 
@@ -220,7 +220,7 @@
                             <x-ds::tooltip text="{{ __('ds.pages.offcanvas.labels.tip_help') }}" placement="top"
                                 variant="dark">
                                 <button type="button"
-                                    class="inline-flex items-center text-[var(--color-primary)] hover:underline">
+                                    class="inline-flex items-center text-(--color-primary) hover:underline">
                                     {{ __('ds.pages.offcanvas.labels.help') }}
                                 </button>
                             </x-ds::tooltip>
@@ -280,7 +280,7 @@
 
         <!-- Documentation -->
         <div class="mt-12">
-            <div class="mb-6 text-sm font-semibold text-[var(--text-secondary)]">
+            <div class="mb-6 text-sm font-semibold text-(--text-secondary)">
                 {{ __('ds.pages.offcanvas.docs.title') }}
             </div>
 
@@ -288,7 +288,7 @@
                 :description="__('ds.pages.offcanvas.docs.usage_subtitle')">
                 <div class="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
                     <div>
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">
+                        <div class="text-sm font-semibold text-(--text-primary)">
                             {{ __('ds.pages.offcanvas.docs.example_title') }}</div>
                         <div class="mt-3">
                             <x-ds::offcanvas size="sm">
@@ -298,7 +298,7 @@
                                 </x-slot:trigger>
 
                                 <x-slot:title>{{ __('ds.pages.offcanvas.labels.right_title') }}</x-slot:title>
-                                <div class="text-sm text-[var(--text-secondary)]">
+                                <div class="text-sm text-(--text-secondary)">
                                     {{ __('ds.pages.offcanvas.labels.content_body') }}</div>
 
                                 <x-slot:footer>
@@ -313,10 +313,10 @@
                     </div>
 
                     <div>
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">
+                        <div class="text-sm font-semibold text-(--text-primary)">
                             {{ __('ds.pages.offcanvas.docs.example_code_title') }}</div>
                         <div
-                            class="mt-3 overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-hover)]">
+                            class="mt-3 overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-hover)">
                             <pre class="overflow-x-auto p-4 text-xs leading-relaxed"><code>@verbatim
                                 <x-ds::offcanvas position="right" size="md">
                                     <x-slot:trigger>
@@ -340,30 +340,30 @@
 
                 <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
                     <div>
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">
+                        <div class="text-sm font-semibold text-(--text-primary)">
                             {{ __('ds.pages.offcanvas.docs.props_title') }}</div>
-                        <div class="mt-3 space-y-2 text-sm text-[var(--text-secondary)]">
-                            <div><span class="font-semibold text-[var(--text-primary)]">open</span> —
+                        <div class="mt-3 space-y-2 text-sm text-(--text-secondary)">
+                            <div><span class="font-semibold text-(--text-primary)">open</span> —
                                 {{ __('ds.pages.offcanvas.docs.props.open') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">position</span> —
+                            <div><span class="font-semibold text-(--text-primary)">position</span> —
                                 {{ __('ds.pages.offcanvas.docs.props.position') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">size</span> —
+                            <div><span class="font-semibold text-(--text-primary)">size</span> —
                                 {{ __('ds.pages.offcanvas.docs.props.size') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">dismissible</span> —
+                            <div><span class="font-semibold text-(--text-primary)">dismissible</span> —
                                 {{ __('ds.pages.offcanvas.docs.props.dismissible') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">closeOnEsc</span> —
+                            <div><span class="font-semibold text-(--text-primary)">closeOnEsc</span> —
                                 {{ __('ds.pages.offcanvas.docs.props.close_on_esc') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">closeOnBackdrop</span> —
+                            <div><span class="font-semibold text-(--text-primary)">closeOnBackdrop</span> —
                                 {{ __('ds.pages.offcanvas.docs.props.close_on_backdrop') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">backdrop</span> —
+                            <div><span class="font-semibold text-(--text-primary)">backdrop</span> —
                                 {{ __('ds.pages.offcanvas.docs.props.backdrop') }}</div>
                         </div>
                     </div>
 
                     <div>
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">
+                        <div class="text-sm font-semibold text-(--text-primary)">
                             {{ __('ds.pages.offcanvas.docs.accessibility_title') }}</div>
-                        <div class="mt-3 space-y-2 text-sm text-[var(--text-secondary)]">
+                        <div class="mt-3 space-y-2 text-sm text-(--text-secondary)">
                             <div>{{ __('ds.pages.offcanvas.docs.accessibility.body') }}</div>
                         </div>
                     </div>

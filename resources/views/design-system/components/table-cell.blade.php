@@ -5,9 +5,9 @@
     $baseClass = 'px-6 py-4 whitespace-nowrap';
 
     $textClass = match ($variant) {
-        'bold' => 'font-medium text-[var(--text-primary)]',
-        'muted' => 'text-[var(--text-muted)]',
-        default => 'text-[var(--text-secondary)]',
+        'bold' => 'font-medium text-(--text-primary)',
+        'muted' => 'text-(--text-muted)',
+        default => 'text-(--text-secondary)',
     };
 @endphp
 

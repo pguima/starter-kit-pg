@@ -50,6 +50,10 @@ return [
         'per_page' => 'Per page',
         'no_results' => 'No users found matching ":search".',
 
+        'validation' => [
+            'email_unique' => 'This email is already registered.',
+        ],
+
         'table' => [
             'user' => 'User',
             'role' => 'Role',

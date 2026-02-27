@@ -4,10 +4,10 @@
     <div>
         <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
-                <h1 class="text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+                <h1 class="text-xl font-semibold tracking-tight text-(--text-primary)">
                     {{ __('ds.pages.kanban.title') }}
                 </h1>
-                <div class="mt-1 text-sm text-[var(--text-secondary)]">
+                <div class="mt-1 text-sm text-(--text-secondary)">
                     {{ __('ds.pages.kanban.subtitle') }}
                 </div>
             </div>
@@ -109,12 +109,12 @@
                     <div class="flex gap-4 overflow-x-auto pb-2">
                         <template x-for="column in columns" :key="column.id">
                             <div
-                                class="w-[320px] shrink-0 rounded-lg bg-[var(--surface-hover)] p-4"
+                                class="w-[320px] shrink-0 rounded-lg bg-(--surface-hover) p-4"
                                 x-on:dragover.prevent
                                 x-on:drop.prevent="moveTask(column.id)"
                             >
-                                <div class="flex items-center justify-between gap-3 pb-3 mb-3 border-b border-[var(--border-subtle)]">
-                                    <div class="text-sm font-semibold text-[var(--text-primary)]" x-text="column.title"></div>
+                                <div class="flex items-center justify-between gap-3 pb-3 mb-3 border-b border-(--border-subtle)">
+                                    <div class="text-sm font-semibold text-(--text-primary)" x-text="column.title"></div>
                                     <span
                                         class="inline-flex items-center rounded-md text-xs px-2 py-0.5 font-medium"
                                         :style="(() => { const s = badgeStyle(column.countVariant); return `background-color: ${s.bg}; color: ${s.fg};`; })()"
@@ -126,7 +126,7 @@
                                 <div class="space-y-3">
                                     <template x-for="(task, index) in column.tasks" :key="task.id">
                                         <div
-                                            class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-card)] p-4 shadow-[var(--shadow-sm)] transition-opacity"
+                                            class="rounded-lg border border-(--border-subtle) bg-(--surface-card) p-4 shadow-(--shadow-sm) transition-opacity"
                                             :class="isDraggingTask(task.id) ? 'opacity-50' : ''"
                                             draggable="true"
                                             x-on:dragstart="startDrag(task.id, column.id, index)"
@@ -136,7 +136,7 @@
                                         >
                                             <div class="flex items-start justify-between gap-3">
                                                 <div class="min-w-0">
-                                                    <div class="text-sm font-semibold text-[var(--text-primary)]" x-text="task.title"></div>
+                                                    <div class="text-sm font-semibold text-(--text-primary)" x-text="task.title"></div>
                                                     <div class="mt-2">
                                                         <span
                                                             class="inline-flex items-center rounded-md text-xs px-2 py-0.5 font-medium"
@@ -156,7 +156,7 @@
                                                 />
                                             </div>
 
-                                            <div class="mt-3 flex items-center justify-between gap-3 text-xs text-[var(--text-muted)]">
+                                            <div class="mt-3 flex items-center justify-between gap-3 text-xs text-(--text-muted)">
                                                 <div class="inline-flex items-center gap-2">
                                                     <iconify-icon icon="solar:calendar-linear" class="text-sm"></iconify-icon>
                                                     <span>{{ __('ds.pages.kanban.labels.due') }}</span>
@@ -183,7 +183,7 @@
                         </template>
                     </div>
 
-                    <div class="mt-6 text-sm text-[var(--text-secondary)]">
+                    <div class="mt-6 text-sm text-(--text-secondary)">
                         <x-ds::alert variant="info" icon="solar:info-circle-linear">
                             {{ __('ds.pages.kanban.hints.drag_hint') }}
                         </x-ds::alert>
@@ -193,15 +193,15 @@
         </div>
 
         <div class="mt-10">
-            <div class="mb-6 text-sm font-semibold text-[var(--text-secondary)]">
+            <div class="mb-6 text-sm font-semibold text-(--text-secondary)">
                 {{ __('ds.pages.kanban.docs.title') }}
             </div>
 
             <x-ds::card :title="__('ds.pages.kanban.docs.links_component.title')" :description="__('ds.pages.kanban.docs.links_component.subtitle')">
                 <div class="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
                     <div>
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">{{ __('ds.pages.kanban.docs.links_component.example_code_title') }}</div>
-                        <div class="mt-3 overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-hover)]">
+                        <div class="text-sm font-semibold text-(--text-primary)">{{ __('ds.pages.kanban.docs.links_component.example_code_title') }}</div>
+                        <div class="mt-3 overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-hover)">
                             <pre class="overflow-x-auto p-4 text-xs leading-relaxed"><code>@verbatim
 <x-ds::link href="/design-system" variant="primary">
     Go to Design System
@@ -219,16 +219,16 @@
                     </div>
 
                     <div>
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">{{ __('ds.pages.kanban.docs.links_component.props_title') }}</div>
-                        <div class="mt-3 grid grid-cols-1 gap-3 text-sm text-[var(--text-secondary)]">
-                            <div><span class="font-semibold text-[var(--text-primary)]">href</span> — {{ __('ds.pages.kanban.docs.links_component.props.href') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">variant</span> — {{ __('ds.pages.kanban.docs.links_component.props.variant') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">size</span> — {{ __('ds.pages.kanban.docs.links_component.props.size') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">icon</span> — {{ __('ds.pages.kanban.docs.links_component.props.icon') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">iconPosition</span> — {{ __('ds.pages.kanban.docs.links_component.props.icon_position') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">external</span> — {{ __('ds.pages.kanban.docs.links_component.props.external') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">underline</span> — {{ __('ds.pages.kanban.docs.links_component.props.underline') }}</div>
-                            <div><span class="font-semibold text-[var(--text-primary)]">disabled</span> — {{ __('ds.pages.kanban.docs.links_component.props.disabled') }}</div>
+                        <div class="text-sm font-semibold text-(--text-primary)">{{ __('ds.pages.kanban.docs.links_component.props_title') }}</div>
+                        <div class="mt-3 grid grid-cols-1 gap-3 text-sm text-(--text-secondary)">
+                            <div><span class="font-semibold text-(--text-primary)">href</span> — {{ __('ds.pages.kanban.docs.links_component.props.href') }}</div>
+                            <div><span class="font-semibold text-(--text-primary)">variant</span> — {{ __('ds.pages.kanban.docs.links_component.props.variant') }}</div>
+                            <div><span class="font-semibold text-(--text-primary)">size</span> — {{ __('ds.pages.kanban.docs.links_component.props.size') }}</div>
+                            <div><span class="font-semibold text-(--text-primary)">icon</span> — {{ __('ds.pages.kanban.docs.links_component.props.icon') }}</div>
+                            <div><span class="font-semibold text-(--text-primary)">iconPosition</span> — {{ __('ds.pages.kanban.docs.links_component.props.icon_position') }}</div>
+                            <div><span class="font-semibold text-(--text-primary)">external</span> — {{ __('ds.pages.kanban.docs.links_component.props.external') }}</div>
+                            <div><span class="font-semibold text-(--text-primary)">underline</span> — {{ __('ds.pages.kanban.docs.links_component.props.underline') }}</div>
+                            <div><span class="font-semibold text-(--text-primary)">disabled</span> — {{ __('ds.pages.kanban.docs.links_component.props.disabled') }}</div>
                         </div>
                     </div>
                 </div>

@@ -89,16 +89,16 @@
 >
     {{-- Label --}}
     @if ($label)
-        <label for="{{ $id }}" class="text-sm font-medium text-[var(--text-primary)]">
+        <label for="{{ $id }}" class="text-sm font-medium text-(--text-primary)">
             {{ $label }}
-            @if ($required) <span class="text-[var(--status-error)]">*</span> @endif
+            @if ($required) <span class="text-(--status-error)">*</span> @endif
         </label>
     @endif
 
     <div class="relative">
         {{-- Icon --}}
         @if ($icon)
-            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-(--text-secondary)">
                 <iconify-icon icon="{{ $icon }}" class="text-lg"></iconify-icon>
             </div>
         @endif
@@ -112,14 +112,14 @@
             @if($placeholder) placeholder="{{ $placeholder }}" @endif
             @if($disabled) disabled @endif
             @if($required) required @endif
-            class="w-full appearance-none rounded-lg border border-[var(--border-default)] bg-[var(--surface-card)] px-3 py-2 text-sm text-[var(--text-primary)] transition-all duration-200 placeholder:text-[var(--text-muted)] focus:border-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 disabled:cursor-not-allowed disabled:bg-[var(--surface-hover)] disabled:text-[var(--text-muted)] {{ $icon ? 'pl-10' : '' }} {{ $error ? 'border-[var(--status-error)]' : '' }}"
+            class="w-full appearance-none rounded-lg border border-(--border-default) bg-(--surface-card) px-3 py-2 text-sm text-(--text-primary) transition-all duration-200 placeholder:text-(--text-muted) focus:border-(--color-primary) focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20 disabled:cursor-not-allowed disabled:bg-(--surface-hover) disabled:text-(--text-muted) {{ $icon ? 'pl-10' : '' }} {{ $error ? 'border-(--status-error)' : '' }}"
         />
     </div>
 
     {{-- Error / Helper --}}
     @if ($error)
-        <p class="text-xs text-[var(--status-error)]">{{ $error }}</p>
+        <p class="text-xs text-(--status-error)">{{ $error }}</p>
     @elseif ($helper)
-        <p class="text-xs text-[var(--text-secondary)]">{{ $helper }}</p>
+        <p class="text-xs text-(--text-secondary)">{{ $helper }}</p>
     @endif
 </div>

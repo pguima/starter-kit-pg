@@ -10,15 +10,15 @@
 ])
 
 @php
-    $baseClass = 'inline-flex items-center gap-1.5 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 rounded-sm cursor-pointer';
+    $baseClass = 'inline-flex items-center gap-1.5 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-(--color-primary)/20 rounded-sm cursor-pointer';
 
     // Variantes de cor
     $variantClass = match ($variant) {
-        'secondary' => 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]',
-        'danger' => 'text-[var(--status-error)] hover:text-[var(--status-error)]/80',
-        'muted' => 'text-[var(--text-muted)] hover:text-[var(--text-secondary)]',
-        'ghost' => 'text-[var(--text-primary)] hover:text-[var(--color-primary)]', // Notion-style default text link usually acts like this
-        default => 'text-[var(--color-primary)] hover:text-[var(--color-primary-hover)]',
+        'secondary' => 'text-(--text-secondary) hover:text-(--text-primary)',
+        'danger' => 'text-(--status-error) hover:text-(--status-error)/80',
+        'muted' => 'text-(--text-muted) hover:text-(--text-secondary)',
+        'ghost' => 'text-(--text-primary) hover:text-(--color-primary)', // Notion-style default text link usually acts like this
+        default => 'text-(--color-primary) hover:text-(--color-primary-hover)',
     };
 
     // Tamanhos

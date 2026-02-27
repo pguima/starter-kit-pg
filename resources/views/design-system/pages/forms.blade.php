@@ -5,10 +5,10 @@
         <!-- Header -->
         <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
-                <h1 class="text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+                <h1 class="text-xl font-semibold tracking-tight text-(--text-primary)">
                     {{ __('ds.pages.forms.title') }}
                 </h1>
-                <div class="mt-1 text-sm text-[var(--text-secondary)]">
+                <div class="mt-1 text-sm text-(--text-secondary)">
                     {{ __('ds.pages.forms.subtitle') }}
                 </div>
             </div>
@@ -72,7 +72,7 @@
                     <x-ds::select label="Role" :options="['Admin', 'Editor', 'Viewer']" icon="solar:user-id-linear" />
 
                     <div class="flex flex-col gap-4">
-                        <label class="text-sm font-medium text-[var(--text-primary)]">Notifications</label>
+                        <label class="text-sm font-medium text-(--text-primary)">Notifications</label>
                         <x-ds::toggle label="Enable email notifications" checked />
                         <x-ds::toggle label="Enable push notifications" />
                         <x-ds::toggle label="Disabled toggle" disabled />
@@ -86,7 +86,7 @@
                 <div class="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2">
                     <!-- Checkboxes -->
                     <div class="space-y-4">
-                        <h4 class="text-sm font-semibold text-[var(--text-primary)]">Checkboxes</h4>
+                        <h4 class="text-sm font-semibold text-(--text-primary)">Checkboxes</h4>
                         <x-ds::checkbox label="I agree to the Terms and Conditions" checked />
                         <x-ds::checkbox label="Subscribe to newsletter" />
                         <x-ds::checkbox label="Disabled Checked" checked disabled />
@@ -95,7 +95,7 @@
 
                     <!-- Radios -->
                     <div class="space-y-4">
-                        <h4 class="text-sm font-semibold text-[var(--text-primary)]">Radio Buttons</h4>
+                        <h4 class="text-sm font-semibold text-(--text-primary)">Radio Buttons</h4>
                         <div class="flex flex-col gap-3">
                             <x-ds::radio name="plan" label="Free Plan (Ads)" value="free" checked />
                             <x-ds::radio name="plan" label="Pro Plan ($10/mo)" value="pro" />
@@ -108,7 +108,7 @@
 
         <!-- Documentation -->
         <div class="mt-12">
-            <div class="mb-6 text-sm font-semibold text-[var(--text-secondary)]">
+            <div class="mb-6 text-sm font-semibold text-(--text-secondary)">
                 {{ __('ds.pages.forms.docs.title') }}
             </div>
 
@@ -116,10 +116,10 @@
                 :description="__('ds.pages.tables.docs.usage_subtitle')">
                 <div class="mt-4 grid grid-cols-1 gap-6">
                     <div>
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">
+                        <div class="text-sm font-semibold text-(--text-primary)">
                             {{ __('ds.pages.forms.docs.example_code_title') }}</div>
                         <div
-                            class="mt-3 overflow-hidden rounded-lg border border-[var(--border-default)] bg-[var(--surface-hover)]">
+                            class="mt-3 overflow-hidden rounded-lg border border-(--border-default) bg-(--surface-hover)">
                             <pre class="overflow-x-auto p-4 text-xs leading-relaxed"><code>@verbatim
                                 <!-- Input -->
                                 <x-ds::input label="Email" icon="solar:letter-linear" error="{{ $message }}" />

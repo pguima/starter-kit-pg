@@ -6,8 +6,8 @@
     <x-ds::card>
         <div class="space-y-6">
             <div>
-                <h1 class="text-xl font-semibold text-[var(--text-primary)]">{{ __('app.auth.login.heading') }}</h1>
-                <p class="mt-1 text-sm text-[var(--text-secondary)]">{{ __('app.auth.login.subtitle') }}</p>
+                <h1 class="text-xl font-semibold text-(--text-primary)">{{ __('app.auth.login.heading') }}</h1>
+                <p class="mt-1 text-sm text-(--text-secondary)">{{ __('app.auth.login.subtitle') }}</p>
             </div>
 
             @if (session('status'))
@@ -42,8 +42,8 @@
                     <x-ds::link href="{{ route('password.request') }}">{{ __('app.auth.login.forgot_password') }}</x-ds::link>
                 </div>
 
-                <label class="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-                    <input type="checkbox" name="remember" class="rounded border-[var(--border-default)]" />
+                <label class="flex items-center gap-2 text-sm text-(--text-secondary)">
+                    <input type="checkbox" name="remember" class="rounded border-(--border-default)" />
                     {{ __('app.auth.login.remember_me') }}
                 </label>
 
